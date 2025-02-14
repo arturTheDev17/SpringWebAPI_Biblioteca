@@ -18,13 +18,14 @@ public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
     private String nome;
-    private Date dataNascimento;
+    private Integer anoNascimento;
     private String nacionalidade;
 
 
     @JsonIgnore
     @ToString.Exclude
-    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Livro> livros;
 }

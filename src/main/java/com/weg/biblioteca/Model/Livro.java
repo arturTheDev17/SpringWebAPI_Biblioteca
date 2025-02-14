@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Entity
 @Data
@@ -17,7 +18,8 @@ public class Livro {
     private String genero;
     private Integer anoPublicacao;
 
-    @ManyToOne
+    @JoinColumn(nullable = false)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Autor autor;
 
     @OneToOne( mappedBy = "livro", cascade = CascadeType.ALL, orphanRemoval = true)
