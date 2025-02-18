@@ -5,10 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * Classe que representa um usuario e uma entidade usuário do banco de dados
- * @author arturTheDev17
- */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

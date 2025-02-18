@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Classe de endpoints para manipulação de autores
+ * @author arturTheDev17
  */
 @AllArgsConstructor
 @RestController

@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Classe de endpoints para manipulação de livros
+ * @author arturTheDev17
+ */
 @RestController
 @AllArgsConstructor
 @RequestMapping("/livro")
@@ -22,6 +26,9 @@ import java.util.List;
 @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
 public class LivroController {
 
+    /**
+     * @see LivroService
+     */
     private LivroService livroService;
 
     /**
