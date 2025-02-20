@@ -34,7 +34,7 @@ public class LivroController {
     /**
      * Endpoint para registro de um livro no banco de dados
      * @param livro Objeto do tipo livro
-     * @return Livro: Objeto do tipo livro
+     * @return Objeto do tipo livro
      */
     @Operation(summary = "Endpoint para registro de um livro no banco de dados", description = "Retorna o livro que foi criado com o ID")
     @ApiResponse(responseCode = "201", description = "Livro criado com sucesso", content = @Content(schema = @Schema(implementation = Livro.class)))
@@ -49,7 +49,7 @@ public class LivroController {
 
     /**
      * Endpoint para listagem de todos os livros do banco de dados
-     * @return List<Livro>: Lista de livros
+     * @return Lista de livros
      */
     @Operation(summary = "Endpoint para listagem de livros no banco de dados", description = "Retorna uma lista de livros")
     @ApiResponse(responseCode = "200", description = "Livros listados com sucesso", content = @Content(schema = @Schema(implementation = Livro.class)))
@@ -65,7 +65,7 @@ public class LivroController {
     /**
      * Endpoint para listagem de um livro especifico do banco de dados a partir do ID
      * @param id ID do livro
-     * @return Livro: Objeto do tipo livro
+     * @return Objeto do tipo livro
      *
      */
     @Operation(summary = "Endpoint para listagem de livro a partir do id no banco de dados", description = "Retorna um livro")
@@ -82,7 +82,7 @@ public class LivroController {
     /**
      * Endpoint para listagem de livros a partir de um autor no banco de dados
      * @param id ID do autor
-     * @return List<Livro>: Lista de livros
+     * @return Lista de livros
      */
     @Operation(summary = "Endpoint para listagem de livros a partir de um autor no banco de dados", description = "Retorna uma lista de livros")
     @ApiResponse(responseCode = "200", description = "Livros do autor listados com sucesso", content = @Content(schema = @Schema(implementation = Livro.class)))
@@ -116,7 +116,7 @@ public class LivroController {
      * Endpoint para atualização de um livro no banco de dados
      * @param id ID do livro
      * @param livro Objeto do tipo livro
-     * @return Livro: Objeto do tipo livro
+     * @return Objeto do tipo livro
      */
     @Operation(summary = "Endpoint para atualização de um livro no banco de dados", description = "Retorna o livro atualizado")
     @ApiResponse(responseCode = "200", description = "Livro atualizado com sucesso", content = @Content(schema = @Schema(implementation = Livro.class)))
@@ -128,7 +128,5 @@ public class LivroController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
-
-
 
 }

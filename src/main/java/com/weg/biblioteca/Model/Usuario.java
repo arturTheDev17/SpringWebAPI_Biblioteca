@@ -14,14 +14,29 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 public class Usuario {
+    /**
+     * ID do usuario, gerado automaticamente pelo banco de dados
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    /**
+     * Nome do usuario, do tipo String
+     */
     private String nome;
+    /**
+     * Email do usuario, do tipo String
+     */
     private String email;
+    /**
+     * Senha do usuario, do tipo String
+     */
     private String senha;
 
-    @OneToOne( mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    /**
+     * Objeto que representa um empréstimo de livro feito pelo usuario, qualquer atualizacao no usuario pode modificar o empréstimo também
+     */
+    @OneToOne( mappedBy = "usuario", cascade = CascadeType.ALL)
     private Emprestimo emprestimo;
 
 }
