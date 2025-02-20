@@ -24,7 +24,7 @@ public class AutorService {
     /**
      * Insere um autor no banco de dados
      * @param autor Objeto do tipo autor
-     * @return Autor: Objeto do tipo autor com o id gerado automaticamente pelo banco de dados
+     * @return Objeto do tipo autor com o id gerado automaticamente pelo banco de dados
      */
     public Autor postAutor(Autor autor) {
         return autorRepository.save(autor);
@@ -32,7 +32,7 @@ public class AutorService {
 
     /**
      * Retorna uma lista de autores do banco de dados
-     * @return List<Autor>: Lista de autores
+     * @return Lista de autores
      */
     public List<Autor> getAutores() {
         return autorRepository.findAll();
@@ -41,9 +41,28 @@ public class AutorService {
     /**
      * Retorna um autor do banco de dados a partir do id
      * @param id ID do autor
-     * @return Autor: Objeto do tipo autor, referente ao id informado
+     * @return Objeto do tipo autor, referente ao id informado
      */
     public Autor getAutor(Integer id) {
         return autorRepository.findById(id).orElseThrow(() -> new RuntimeException("Autor não encontrado"));
+    }
+
+    /**
+     * Exclui um autor do banco de dados
+     * @param id ID do autor
+     */
+    public void removeAutor(Integer id) {
+        autorRepository.deleteById(id);
+    }
+
+    /**
+     * Atualiza um autor no banco de dados a partir do id
+     * @param id ID do autor
+     * @param autor Objeto do tipo autor
+     * @return Objeto do tipo autor
+     */
+    public Autor updateAutor(Integer id, Autor autor) {
+        autor.setId(id);
+        return autorRepository.save(autor);
     }
 }

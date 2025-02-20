@@ -6,10 +6,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
-import java.util.Date;
 import java.util.List;
 
+/**
+ * Classe que representa um autor de livros e uma entidade do autor no banco de dados
+ * @author arturTheDev17
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

@@ -5,6 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Classe que representa um empréstimo de livro e uma entidade deste empréstimo no banco de dados
+ * @author arturTheDev17
+ */
 @Entity
 @Data
 @AllArgsConstructor

@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +33,7 @@ public class AutorController {
     /**
      * Endpoint para registro de um livro no banco de dados
      * @param autor Objeto do tipo autor
-     * @return Autor: Objeto do tipo autor com o id gerado automaticamente pelo banco de dados
+     * @return Objeto do tipo autor com o id gerado automaticamente pelo banco de dados
      */
     @Operation(summary = "Endpoint para registro de um autor no banco de dados", description = "Retorna o autor que foi criado com o ID")
     @ApiResponse(responseCode = "201", description = "Autor criado com sucesso", content = @Content(schema = @Schema(implementation = Autor.class)))
@@ -50,7 +49,7 @@ public class AutorController {
 
     /**
      * Endpoint para listagem de todos os autores do banco de dados
-     * @return List<Autor>: Lista de autores
+     * @return Lista de autores
      */
     @Operation(summary = "Endpoint para listagem de autores no banco de dados", description = "Retorna uma lista de autores")
     @ApiResponse(responseCode = "200", description = "Autores listados com sucesso", content = @Content(schema = @Schema(implementation = Autor.class)))
@@ -66,7 +65,7 @@ public class AutorController {
     /**
      * Endpoint para listagem de um autor especifico do banco de dados a partir do ID
      * @param id ID do autor
-     * @return Autor: Objeto do tipo autor
+     * @return Objeto do tipo autor
      */
     @Operation(summary = "Endpoint para listagem de um autor a partir do id no banco de dados", description = "Retorna um autor")
     @ApiResponse(responseCode = "200", description = "Autor listado com sucesso", content = @Content(schema = @Schema(implementation = Autor.class)))
@@ -74,6 +73,40 @@ public class AutorController {
     public ResponseEntity<Autor> getAutor(@PathVariable Integer id) {
         try {
             return new ResponseEntity<>(autorService.getAutor(id), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    /**
+     * Endpoint para exclusão de um autor no banco de dados
+     * @param id ID do autor
+     * @return Void
+     */
+    @Operation(summary = "Endpoint para exclusão de um autor no banco de dados", description = "Retorna o autor excluido")
+    @ApiResponse(responseCode = "204", description = "Autor excluido com sucesso", content = @Content(schema = @Schema(implementation = Autor.class)))
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> removeAutor(@PathVariable Integer id) {
+        try {
+            autorService.removeAutor(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    /**
+     * Endpoint para atualização de um autor no banco de dados
+     * @param id ID do autor
+     * @param autor Objeto do tipo autor
+     * @return Objeto do tipo autor
+     */
+    @Operation(summary = "Endpoint para atualização de um autor no banco de dados", description = "Retorna o autor atualizado")
+    @ApiResponse(responseCode = "200", description = "Autor atualizado com sucesso", content = @Content(schema = @Schema(implementation = Autor.class)))
+    @PutMapping("/{id}")
+    public ResponseEntity<Autor> updateAutor(@PathVariable Integer id, @RequestBody Autor autor) {
+        try {
+            return new ResponseEntity<>(autorService.updateAutor(id, autor), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

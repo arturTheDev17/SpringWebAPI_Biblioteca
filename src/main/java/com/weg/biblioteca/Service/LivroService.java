@@ -21,11 +21,10 @@ public class LivroService {
      * @see AutorService
      */
     private AutorService autorService;
-
     /**
      * Insere um livro no banco de dados
      * @param livro Objeto do tipo livro
-     * @return Livro: Objeto do tipo livro com o id gerado automaticamente pelo banco de dados
+     * @return Objeto do tipo livro com o id gerado automaticamente pelo banco de dados
      */
     public Livro postLivro(Livro livro) {
         return livroRepository.save(livro);
@@ -33,7 +32,7 @@ public class LivroService {
 
     /**
      * Retorna uma lista de livros do banco de dados
-     * @return List<Livro>: Lista de livros
+     * @return Lista de livros
      */
     public List<Livro> getLivros() {
         return livroRepository.findAll();
@@ -42,7 +41,7 @@ public class LivroService {
     /**
      * Retorna um livro do banco de dados a partir do id
      * @param id ID do livro
-     * @return Livro: Objeto do tipo livro
+     * @return Objeto do tipo livro
      */
     public Livro getLivro(Integer id) {
         return livroRepository.findById(id).orElseThrow(() -> new RuntimeException("Livro não encontrado"));
@@ -51,7 +50,7 @@ public class LivroService {
     /**
      * Retorna uma lista de livros a partir de um autor no banco de dados
      * @param autorId ID do autor
-     * @return List<Livro>: Lista de livros
+     * @return Lista de livros
      */
     public List<Livro> getLivrosByAutor(Integer autorId) {
         return autorService.getAutor(autorId).getLivros();
@@ -69,7 +68,7 @@ public class LivroService {
      * Atualiza um livro no banco de dados a partir do id
      * @param id ID do livro
      * @param livro Objeto do tipo livro
-     * @return Livro: Objeto do tipo livro
+     * @return Objeto do tipo livro
      */
     public Livro updateLivro(Integer id, Livro livro) {
         livro.setId(id);
