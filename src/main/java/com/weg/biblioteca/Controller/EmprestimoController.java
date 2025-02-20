@@ -39,6 +39,7 @@ public class EmprestimoController {
     public ResponseEntity<Emprestimo> postEmprestimo(@RequestBody Emprestimo emprestimo) {
         try {
             return new ResponseEntity<>( emprestimoService.criarEmprestimo( emprestimo ) , HttpStatus.CREATED);
+
         } catch ( Exception e ) {
             return new ResponseEntity<>( HttpStatus.BAD_REQUEST );
         }

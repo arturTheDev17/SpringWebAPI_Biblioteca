@@ -58,6 +58,7 @@ public class EmprestimoService {
         return emprestimoRepository.findById(id).orElseThrow(() -> new RuntimeException("Emprestimo não encontrado"));
     }
 
+
     public String getStatusEmprestimo(Integer id) {
         Emprestimo emprestimo = emprestimoRepository.findById(id).orElseThrow(() -> new RuntimeException("Emprestimo não encontrado"));
 
