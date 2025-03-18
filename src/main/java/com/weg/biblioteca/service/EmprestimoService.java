@@ -1,7 +1,7 @@
-package com.weg.biblioteca.Service;
+package com.weg.biblioteca.service;
 
-import com.weg.biblioteca.Model.Emprestimo;
-import com.weg.biblioteca.Repository.EmprestimoRepository;
+import com.weg.biblioteca.model.Emprestimo;
+import com.weg.biblioteca.repository.EmprestimoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

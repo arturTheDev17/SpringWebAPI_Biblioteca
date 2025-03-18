@@ -1,8 +1,8 @@
-package com.weg.biblioteca.Controller;
+package com.weg.biblioteca.controller;
 
 
-import com.weg.biblioteca.Model.Emprestimo;
-import com.weg.biblioteca.Service.EmprestimoService;
+import com.weg.biblioteca.model.Emprestimo;
+import com.weg.biblioteca.service.EmprestimoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

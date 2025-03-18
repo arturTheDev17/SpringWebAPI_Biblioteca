@@ -1,4 +1,4 @@
-package com.weg.biblioteca.Model;
+package com.weg.biblioteca.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

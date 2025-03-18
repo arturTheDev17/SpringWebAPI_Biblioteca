@@ -1,7 +1,7 @@
-package com.weg.biblioteca.Service;
+package com.weg.biblioteca.service;
 
-import com.weg.biblioteca.Model.Livro;
-import com.weg.biblioteca.Repository.LivroRepository;
+import com.weg.biblioteca.model.Livro;
+import com.weg.biblioteca.repository.LivroRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

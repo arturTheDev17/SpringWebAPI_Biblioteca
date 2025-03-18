@@ -1,8 +1,7 @@
-package com.weg.biblioteca.Repository;
+package com.weg.biblioteca.repository;
 
-import com.weg.biblioteca.Model.Livro;
+import com.weg.biblioteca.model.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  * Camada de acesso do banco de dados e das ações relacionadas aos livros

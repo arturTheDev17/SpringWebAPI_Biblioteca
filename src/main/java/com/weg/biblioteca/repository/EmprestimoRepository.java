@@ -1,6 +1,6 @@
-package com.weg.biblioteca.Repository;
+package com.weg.biblioteca.repository;
 
-import com.weg.biblioteca.Model.Emprestimo;
+import com.weg.biblioteca.model.Emprestimo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

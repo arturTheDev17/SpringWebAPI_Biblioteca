@@ -1,7 +1,7 @@
-package com.weg.biblioteca.Service;
+package com.weg.biblioteca.service;
 
-import com.weg.biblioteca.Model.Autor;
-import com.weg.biblioteca.Repository.AutorRepository;
+import com.weg.biblioteca.model.Autor;
+import com.weg.biblioteca.repository.AutorRepository;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,6 @@
-package com.weg.biblioteca.Repository;
+package com.weg.biblioteca.repository;
 
-import com.weg.biblioteca.Model.Livro;
-import com.weg.biblioteca.Model.Usuario;
+import com.weg.biblioteca.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

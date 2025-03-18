@@ -1,7 +1,7 @@
-package com.weg.biblioteca.Controller;
+package com.weg.biblioteca.controller;
 
-import com.weg.biblioteca.Model.Autor;
-import com.weg.biblioteca.Service.AutorService;
+import com.weg.biblioteca.model.Autor;
+import com.weg.biblioteca.service.AutorService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
